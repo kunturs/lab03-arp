@@ -93,7 +93,7 @@ scrape_cna_articles <- function() {
     result <- scrape_article(url)
     if (!is.null(result)) {
       news_list[[length(news_list) + 1]] <- result
-      cat("✅ Scraped:", url, "\n")
+      cat("Scraped:", url, "\n")
     }
     Sys.sleep(2)
   }
@@ -109,4 +109,4 @@ all_news <- bind_rows(dw_data, bbc_data, cna_data)
 output_file <- paste0("all_news_general_", now_str, ".csv")
 write_csv(all_news, output_file)
 
-cat("🎉 All general news scraped and saved to:", output_file, "\n")
+cat("All general news scraped and saved to:", output_file, "\n")
